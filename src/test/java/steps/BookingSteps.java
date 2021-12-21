@@ -37,10 +37,10 @@ public class BookingSteps {
         Assert.assertTrue(hotelsNames.contains(hotel));
     }
 
-    @Then("{string} rating should be {string}")
+    @Then("Hotel {string} rating should be {string}")
     public void hotelRatingShouldBe(String hotel, String rating) {
         ArrayList<String> hotelsRating = new ArrayList<>();
-        for (SelenideElement element : $$(By.xpath(String.format("//*[text()='%s']//ancestor::*[@class='_7192d3184']//*[contains(@aria-label, 'Scored')]", hotel)))) {
+        for (SelenideElement element : $$(By.xpath(String.format("//*[text()='%s']//ancestor::*[@data-testid='property-card']//*[contains(@aria-label, 'Score')]", hotel)))) {
             hotelsRating.add(element.getText());
         }
         Assert.assertTrue(hotelsRating.contains(rating));

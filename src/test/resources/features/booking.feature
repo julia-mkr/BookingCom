@@ -8,7 +8,7 @@ Feature: Search on booking.com
   Scenario Outline: Check hotel rating
      Given User is looking for hotels in '<City>' city
      When User does search
-     Then '<Hotel>' rating should be '<Rating>'
+     Then Hotel '<Hotel>' rating should be '<Rating>'
      Examples:
        | City   | Hotel                                | Rating |
        | Minsk  | Hampton by Hilton Minsk City Centre  | 8.9    |
